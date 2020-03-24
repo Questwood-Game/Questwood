@@ -1,0 +1,48 @@
+settings = {
+	iphone =
+	{
+		plist=
+		{
+			UIStatusBarHidden=true,
+                        CFBundleIconFiles = {
+                            "Icon.png",
+                            "Icon@2x.png",
+                            "Icon-72.png",
+                            "Icon-Small.png",
+                            "Icon-Small-50.png",
+                            
+                        },
+                        
+                        MinimumOSVersion = "5.1.0",
+                        UIInterfaceOrientation = "UIInterfaceOrientationLandscapeRight",
+                        UISupportedInterfaceOrientations = {"UIInterfaceOrientationLandscapeRight","UIInterfaceOrientationLandscapeLeft" },
+
+                        UIAppFonts =
+                        {
+                            "Grinched.ttf",
+                            "Colophon DBZ.ttf",
+                            "Basic Comical Regular NC.ttf"
+                        },
+		}
+
+
+	},
+        orientation =
+	{
+		default = "landscapeRight",
+                supported = {"landscapeRight","landscapeLeft" },
+	},
+        android =
+	{
+		usesPermissions =
+		{
+                        
+		},
+	},
+
+   
+
+}
+
+settings.iphone.plist["UIInterfaceOrientation~ipad"] = "UIInterfaceOrientationLandscapeRight"
+settings.iphone.plist["UISupportedInterfaceOrientations~ipad"] = {  "UIInterfaceOrientationLandscapeRight","UIInterfaceOrientationLandscapeLeft" }
