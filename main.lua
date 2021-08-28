@@ -44,8 +44,6 @@ local cMessageBox = require( "cMessageBox" );
 
 
 local sprite_collection = require( "sprite_collection" );
---local movements = require "movements"
---      character = require "character"
 
 local bag = require "bag";
 local storehouse = require "storehouse";
@@ -154,7 +152,6 @@ if(is3x4screen()) then
 end
 
 if advertising.ShowAdvertising then
-    --thegame.InfoBox.line1={357-60,69-yo}
     thegame.InfoBox.line1={0+350,72-yo}
     thegame.InfoBox.line2={0+60,70-yo}
 else
@@ -337,14 +334,7 @@ function LoadLevel(self)
     Runtime:addEventListener( "enterFrame", moveCamera )
     
     thegame.Loading.text = "Loading.24"
-    --collectgarbage()
-    --print( "MemUsage: " .. collectgarbage("count") )
-    --local textMem = system.getInfo( "textureMemoryUsed" ) / 1000000
-    --print( "TexMem:   " .. textMem )
-
-
-    
-    
+   
 end
 
 

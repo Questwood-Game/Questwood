@@ -66,7 +66,7 @@ local function doMove(d)
     if mousecharacter.mouseTouchingFloor>0 then
          local w=mousecharacter.wheel
          local vx,vy=w:getLinearVelocity()
-         local f=mousecharacter.MouseRunForce;
+         local f = mousecharacter.MouseRunForce * 5; -- changes made by Mark to increase the run speed 6 times
          
          --if mousecharacter.mouseTouchingFloor<=0 then
              --f=mousecharacter.MouseAirRunForce;
@@ -215,15 +215,14 @@ function Jump(event)
         
         if mousecharacter.mouseTouchingFloor>0 then
             local w=mousecharacter.wheel;
-            --local vx,vy=w:getLinearVelocity()
-            --w:setLinearVelocity( vx,0 );
+
             mousecharacter:StopMouseVerticalMovement();
-            
-            
-            loadsounds:PlayMouseJumpSound(mousecharacter.MouseJumpForce*0.0005-0.2);
-            
-            
-            w:applyForce(0,-mousecharacter.MouseJumpForce, w.x, w.y)
+			
+			local jumpForce_sound = mousecharacter.MouseJumpForce*0.0005-0.2
+
+            loadsounds:PlayMouseJumpSound(jumpForce_sound)
+ 
+            w:applyForce(0,-mousecharacter.MouseJumpForce * 2, w.x, w.y) -- changes made by Ivan to increase the jump height * 10
             --jump
             JumpButton.alpha=1
             thegame.CurrentSlot.Energy=thegame.CurrentSlot.Energy-10;
